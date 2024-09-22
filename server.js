@@ -1,12 +1,19 @@
 const express = require('express');
 const app = express();
-const dbClient = require('./db-client');
+const mongoDb = require('./src/utils/mongodb');
 
 const port = 3000;
 
-app.use('/', require('./routes'));
+app.use('/', require('./src/routes'));
 
-app.listen(process.env.PORT || port);
-console.log('Web Server is listening at port ' + (process.env.PORT || port));
-
-dbClient.dbTest().catch(console.error);
+mongoDb.initDb((err, mongodb ) => {
+    if (err) {
+        console.log(err);
+    } else {
+        app.listen(process.env.PORT || port);   
+        console.log('Web Server is listening at port ' + (process.env.PORT || port));
+        console.log(mongoDb.getDb()
+        .db()
+        .collection('sample_mflix'));
+    }
+});
