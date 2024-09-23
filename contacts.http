@@ -1,0 +1,18 @@
+// Localhost Requests
+GET http://localhost:3000/contacts HTTP/1.1
+
+###
+
+GET http://localhost:3000/contacts/66f1c80632da1a7d886f0fd1 HTTP/1.1
+
+###
+// -------------------
+// Render Requests
+
+GET https://cse341-webservices-2j5w.onrender.com/contacts HTTP/1.1
+
+###
+
+GET https://cse341-webservices-2j5w.onrender.com/contacts/66f1c80632da1a7d886f0fd1 HTTP/1.1
+
+###
