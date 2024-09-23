@@ -1,9 +1,9 @@
 const mongodb = require('../utils/mongodb');
+var ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
     var results = 
-    await
-    mongodb
+    await mongodb
     .getDb()
     .db('cse341')
     .collection('contacts')
@@ -12,6 +12,12 @@ const getAll = async (req, res) => {
     res.jsonp(results);
 };
 
+const getById = async (req, res) => {
+    var doc = await mongodb.getDb().db('cse341').collection('contacts').findOne({ _id: new ObjectId(`${req.params.id}`) });
+    res.jsonp(doc);
+};
+
 module.exports = {
-    getAll
+    getAll,
+    getById
 }
