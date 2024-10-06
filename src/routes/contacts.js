@@ -2,10 +2,10 @@ const contactsRouter = require('express').Router();
 const contactsController = require('../controllers/contacts');
 
  
-contactsRouter.get('/contacts', contactsController.getAll);
-contactsRouter.get('/contacts/:id', contactsController.getById);
-contactsRouter.post('/contacts', contactsController.postRecord);
-contactsRouter.put('/contacts', contactsController.putRecord);
-contactsRouter.delete('/contacts', contactsController.deleteRecord);
+contactsRouter.get('/', contactsController.getAll);
+contactsRouter.get('/:id', contactsController.getById);
+contactsRouter.post('/', contactsController.postRecord);
+contactsRouter.put('/:id', contactsController.putRecord);
+contactsRouter.delete('/:id', contactsController.deleteRecord);
 
 module.exports = contactsRouter;
