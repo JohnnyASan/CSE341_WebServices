@@ -7,7 +7,38 @@ GET http://localhost:3000/contacts HTTP/1.1
 GET http://localhost:3000/contacts/66f1c80632da1a7d886f0fd1 HTTP/1.1
 
 
+### Create contact
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Coquito",
+    "lastName": "Sanabria",
+    "email": "coq@gmail.com",
+    "favoriteColor": "Yellow",
+    "birthday": "01/01/2020"
+}
+
+### Update contact
+PUT http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Coquito",
+    "lastName": "Sanabria",
+    "email": "coq@gmail.com",
+    "favoriteColor": "Yellow",
+    "birthday": "01/02/2020"
+}
+
+
+### Delete contact
+DELETE http://localhost:3000/contacts/6701f53da197d6284388ba5a HTTP/1.1
+
+
 ###
+// -------------------
+// -------------------
 // -------------------
 // Render Requests
 ### Get All
@@ -18,4 +49,30 @@ GET https://cse341-webservices-2j5w.onrender.com/contacts HTTP/1.1
 
 GET https://cse341-webservices-2j5w.onrender.com/contacts/66f1c80632da1a7d886f0fd1 HTTP/1.1
 
-###
+### Create contact
+POST https://cse341-webservices-2j5w.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Coquito",
+    "lastName": "Sanabria",
+    "email": "coq@gmail.com",
+    "favoriteColor": "Yellow",
+    "birthday": "01/01/2020"
+}
+
+### Update contact
+PUT https://cse341-webservices-2j5w.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Coquito",
+    "lastName": "Sanabria",
+    "email": "coq@gmail.com",
+    "favoriteColor": "Yellow",
+    "birthday": "01/02/2020"
+}
+
+### Delete contact
+DELETE http://localhost:3000/contacts/ HTTP/1.1
+
