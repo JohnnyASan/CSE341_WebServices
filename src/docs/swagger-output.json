@@ -5,10 +5,10 @@
     "description": "Api used for saving, updated, reading, and deleting contacts.",
     "version": "1.0.0"
   },
-  "host": "https://cse341-webservices-2j5w.onrender.com",
-  "basePath": "/",
+  "host": "cse341-webservices-2j5w.onrender.com",
+  "basePath": "/api-docs",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/contacts/": {
