@@ -5,7 +5,8 @@ const doc = {
     title: 'Contacts API',
     description: 'Api used for saving, updated, reading, and deleting contacts.'
   },
-  host: 'https://cse341-webservices-2j5w.onrender.com'
+  host: 'https://cse341-webservices-2j5w.onrender.com',
+  schemes: ['https']
 };
 
 const outputFile = './swagger-output.json';
