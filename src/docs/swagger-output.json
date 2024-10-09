@@ -13,7 +13,11 @@
   "paths": {
     "/contacts/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Get All Contacts",
+        "description": "Gets all contacts in the collection. This endpoint is NOT paginated.",
         "produces": [
           "application/json"
         ],
@@ -24,34 +28,82 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Create a new Contact",
+        "description": "Creates a new contact in the contacts collection.",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "description": "Create a new contact",
             "schema": {
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "John"
                 },
                 "lastName": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Doe"
                 },
                 "email": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "email@example.com"
                 },
                 "favoriteColor": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "blue"
                 },
                 "birthday": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "01/01/2000"
                 }
-              }
+              },
+              "required": [
+                "firstName",
+                "lastName",
+                "email",
+                "favoriteColor",
+                "birthday"
+              ]
             }
           }
         ],
         "responses": {
+          "200": {
+            "description": "Create a new contact.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "John"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "email@example.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "blue"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "01/01/2000"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
           "201": {
             "description": "Created"
           },
@@ -63,7 +115,11 @@
     },
     "/contacts/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Get Contact By ID",
+        "description": "Gets a single contact by the provided ID.",
         "produces": [
           "application/json"
         ],
@@ -72,7 +128,8 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "ID of the contact to be retrieved."
           }
         ],
         "responses": {
@@ -82,40 +139,89 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Update a Contact by ID",
+        "description": "Updated a contact in the contacts collection by provided ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "ID of the contact to be updated."
           },
           {
             "name": "body",
             "in": "body",
+            "description": "Update a contact",
             "schema": {
               "type": "object",
               "properties": {
                 "firstName": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "John"
                 },
                 "lastName": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Doe"
                 },
                 "email": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "email@example.com"
                 },
                 "favoriteColor": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "blue"
                 },
                 "birthday": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "01/01/2000"
                 }
-              }
+              },
+              "required": [
+                "firstName",
+                "lastName",
+                "email",
+                "favoriteColor",
+                "birthday"
+              ]
             }
           }
         ],
         "responses": {
+          "200": {
+            "description": "Update a contact.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "John"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "email@example.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "blue"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "01/01/2000"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
           "204": {
             "description": "No Content"
           },
@@ -125,13 +231,18 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Delete a Contact by ID",
+        "description": "Deletes a contact from the contacts collection for the provided ID.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "ID of the contact to be deleted."
           }
         ],
         "responses": {
