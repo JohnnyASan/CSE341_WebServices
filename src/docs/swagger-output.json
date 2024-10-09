@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "host": "cse341-webservices-2j5w.onrender.com",
-  "basePath": "/api-docs",
+  "basePath": "/",
   "schemes": [
     "https"
   ],
