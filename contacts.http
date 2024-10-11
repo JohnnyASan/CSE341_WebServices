@@ -20,7 +20,7 @@ content-type: application/json
 }
 
 ### Update contact
-PUT http://localhost:3000/contacts HTTP/1.1
+PUT http://localhost:3000/contacts/6701f5343ddc1d8a6e3996b8 HTTP/1.1
 content-type: application/json
 
 {
@@ -33,7 +33,7 @@ content-type: application/json
 
 
 ### Delete contact
-DELETE http://localhost:3000/contacts/6701f53da197d6284388ba5a HTTP/1.1
+DELETE http://localhost:3000/contacts/6701f5a23ddc1d8a6e3996b9 HTTP/1.1
 
 
 ###
@@ -62,7 +62,7 @@ content-type: application/json
 }
 
 ### Update contact
-PUT https://cse341-webservices-2j5w.onrender.com/contacts HTTP/1.1
+PUT https://cse341-webservices-2j5w.onrender.com/contacts/6701f809edb99c6202db3624 HTTP/1.1
 content-type: application/json
 
 {
@@ -74,5 +74,5 @@ content-type: application/json
 }
 
 ### Delete contact
-DELETE http://localhost:3000/contacts/ HTTP/1.1
+DELETE https://cse341-webservices-2j5w.onrender.com/contacts/6701f809edb99c6202db3624 HTTP/1.1
 
