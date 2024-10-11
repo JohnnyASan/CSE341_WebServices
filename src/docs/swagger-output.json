@@ -1,0 +1,259 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Contacts API",
+    "description": "Api used for saving, updated, reading, and deleting contacts.",
+    "version": "1.0.0"
+  },
+  "host": "cse341-webservices-2j5w.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/contacts/": {
+      "get": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Get All Contacts",
+        "description": "Gets all contacts in the collection. This endpoint is NOT paginated.",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Create a new Contact",
+        "description": "Creates a new contact in the contacts collection.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create a new contact",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "John"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "email@example.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "blue"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "01/01/2000"
+                }
+              },
+              "required": [
+                "firstName",
+                "lastName",
+                "email",
+                "favoriteColor",
+                "birthday"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Create a new contact.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "John"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "email@example.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "blue"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "01/01/2000"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/contacts/{id}": {
+      "get": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Get Contact By ID",
+        "description": "Gets a single contact by the provided ID.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of the contact to be retrieved."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Update a Contact by ID",
+        "description": "Updated a contact in the contacts collection by provided ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of the contact to be updated."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update a contact",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "John"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "email@example.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "blue"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "01/01/2000"
+                }
+              },
+              "required": [
+                "firstName",
+                "lastName",
+                "email",
+                "favoriteColor",
+                "birthday"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Update a contact.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "John"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "email@example.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "blue"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "01/01/2000"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Delete a Contact by ID",
+        "description": "Deletes a contact from the contacts collection for the provided ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID of the contact to be deleted."
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
